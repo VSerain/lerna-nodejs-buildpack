@@ -216,14 +216,15 @@ should_use_npm_ci() {
 npm_node_modules() {
   local build_dir=${1:-}
   local production=${NPM_CONFIG_PRODUCTION:-false}
+  local package=${PACKAGE:-"*"}
 
   if [ -e "$build_dir/package.json" ]; then
     cd "$build_dir" || return
 
     if [[ "$USE_NPM_INSTALL" == "false" ]]; then
       meta_set "use-npm-ci" "true"
-      echo "Installing node modules"
-      monitor "npm-install" npm ci --production="$production" --unsafe-perm --userconfig "$build_dir/.npmrc" 2>&1
+      echo "Installing node modules for $package package (and deps)"
+      monitor "npm-install" npm ci --include-workspace-root=true --workspace="$package" --production="$production" --unsafe-perm --userconfig "$build_dir/.npmrc" 2>&1
     else
       meta_set "use-npm-ci" "false"
       if [ -e "$build_dir/package-lock.json" ]; then
