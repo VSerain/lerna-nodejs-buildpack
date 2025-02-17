@@ -18,6 +18,19 @@
 ## [Unreleased]
 
 
+## [v284] - 2025-02-14
+
+- Added Node.js version 23.8.0.
+
+## [v283] - 2025-02-11
+
+- Added Node.js version 22.14.0.
+- Added Node.js version 20.18.3.
+
+## [v282] - 2025-02-06
+
+- Removed `UV_USE_IO_URING` override. ([#1376](https://github.com/heroku/heroku-buildpack-nodejs/pull/1376))
+
 ## [v281] - 2025-02-05
 
 - Exporting `COREPACK_HOME` to downstream buildpacks to prevent Corepack shims from downloading the requested package manager again in a subsequent buildpack. ([#1374](https://github.com/heroku/heroku-buildpack-nodejs/pull/1374))
@@ -1016,7 +1029,10 @@ Accepts `cacheDirectories` array in package.json to override default `node_modul
 
 - Documented at https://devcenter.heroku.com/articles/nodejs-support#cache-behavior
 
-[unreleased]: https://github.com/heroku/heroku-buildpack-nodejs/compare/v281...main
+[unreleased]: https://github.com/heroku/heroku-buildpack-nodejs/compare/v284...main
+[v284]: https://github.com/heroku/heroku-buildpack-nodejs/compare/v283...v284
+[v283]: https://github.com/heroku/heroku-buildpack-nodejs/compare/v282...v283
+[v282]: https://github.com/heroku/heroku-buildpack-nodejs/compare/v281...v282
 [v281]: https://github.com/heroku/heroku-buildpack-nodejs/compare/v280...v281
 [v280]: https://github.com/heroku/heroku-buildpack-nodejs/compare/v279...v280
 [v279]: https://github.com/heroku/heroku-buildpack-nodejs/compare/v278...v279
